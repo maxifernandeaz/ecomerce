@@ -28,7 +28,10 @@ public class Producto {
     }
 
     public void setPrecio(double precio) {
-        this.precio = precio;
+        if (precio >=0) {
+            this.precio = precio;
+        }
+
     }
 
     public String getNombre() {
@@ -36,7 +39,10 @@ public class Producto {
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        // verificio que el nombre no este vacio
+       if(nombre != null && !nombre.trim().isEmpty()) {
+           this.nombre = nombre;
+       }
     }
 
     public int getCantidadStock() {
@@ -44,7 +50,9 @@ public class Producto {
     }
 
     public void setCantidadStock(int cantidadStock) {
-        this.cantidadStock = cantidadStock;
+        if(cantidadStock >= 0) {
+            this.cantidadStock = cantidadStock;
+        }
     }
 
     public int getId() {
